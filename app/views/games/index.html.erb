@@ -3,7 +3,7 @@
 <h1>Games</h1>
 
 <div id="games">
-  <% @games.each do |game| %>
+  <% @games.first(5).each do |game| %>
     <%= render game %>
     <p>
       <%= link_to "Show this game", game %>
