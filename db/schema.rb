@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_28_031515) do
+ActiveRecord::Schema.define(version: 2022_01_28_043722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,18 @@ ActiveRecord::Schema.define(version: 2022_01_28_031515) do
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "critics_count", default: 0
     t.index ["name"], name: "index_companies_on_name", unique: true
+  end
+
+  create_table "critics", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "criticable_type"
+    t.bigint "criticable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["criticable_type", "criticable_id"], name: "index_critics_on_criticable"
   end
 
   create_table "games", force: :cascade do |t|
@@ -62,8 +73,19 @@ ActiveRecord::Schema.define(version: 2022_01_28_031515) do
     t.bigint "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "critics_count", default: 0
     t.index ["name"], name: "index_games_on_name", unique: true
     t.index ["parent_id"], name: "index_games_on_parent_id"
+  end
+
+  create_table "games_genres", id: false, force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "genre_id", null: false
+  end
+
+  create_table "games_platforms", id: false, force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "platform_id", null: false
   end
 
   create_table "genres", force: :cascade do |t|
@@ -74,14 +96,14 @@ ActiveRecord::Schema.define(version: 2022_01_28_031515) do
   end
 
   create_table "involved_companies", force: :cascade do |t|
-    t.bigint "companies_id"
-    t.bigint "games_id"
+    t.bigint "company_id"
+    t.bigint "game_id"
     t.boolean "developer", default: false
     t.boolean "publisher", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["companies_id"], name: "index_involved_companies_on_companies_id"
-    t.index ["games_id"], name: "index_involved_companies_on_games_id"
+    t.index ["company_id"], name: "index_involved_companies_on_company_id"
+    t.index ["game_id"], name: "index_involved_companies_on_game_id"
   end
 
   create_table "platforms", force: :cascade do |t|
