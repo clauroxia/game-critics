@@ -1,37 +1,44 @@
-<%= form_with(model: company) do |form| %>
-  <% if company.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
-
-      <ul>
-        <% company.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: company, class: "flex flex-column gap-4") do |form| %>
+  <div class="input">
+    <%= form.label :name, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.text_field :name, class: "input__content", placeholder: "Company SA" %>
     </div>
-  <% end %>
+    <%=errors_for(company, :name)%>
+  </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="input">
+    <%= form.label :description, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.text_area :description, class: "input__content", placeholder: "About the company..." %>
+    </div>
+    <%=errors_for(company, :description)%>
+  </div>
+
+  <div class="input">
+    <%= form.label :start_date, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.date_field :start_date, class: "input__content", placeholder: "dd/mm/yyyy" %>
+    </div>
+    <%=errors_for(company, :start_date)%>
+  </div>
+
+  <div class="input">
+    <%= form.label :country, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.text_field :country, class: "input__content", placeholder: "Somewhere" %>
+    </div>
+    <%=errors_for(company, :country)%>
+  </div>
+
+  <div class="input">
+    <%= form.label :cover, class:"content-xs overline"%>
+    <%=image_tag(company.cover) if company.cover.attached?%>
+    <%= form.file_field :cover, class: "input__content"%>
+    <%=errors_for(company, :cover)%>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.date_field :start_date %>
-  </div>
-
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: "button button--primary full-width" %>
   </div>
 <% end %>
