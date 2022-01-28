@@ -1,21 +1,10 @@
 <%= form_with(model: game, class: "flex flex-column gap-4") do |form| %>
-  <% if game.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-      <ul>
-        <% game.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="input">
     <%= form.label :name, class:"content-xs overline" %>
     <div class="input__container">
       <%= form.text_field :name, class: "input__content", placeholder: "Secret planning" %>
     </div>
+    <%=errors_for(game, :name)%>
   </div>
 
   <div class="input">
@@ -23,6 +12,7 @@
     <div class="input__container">
       <%= form.text_area :summary, class: "input__content", placeholder: "This is the best game yet..." %>
     </div>
+    <%=errors_for(game, :summary)%>
   </div>
 
   <div class="input">
@@ -30,6 +20,7 @@
     <div class="input__container">
       <%= form.date_field :release_date, class: "input__content", placeholder: "dd/mm/yyyy" %>
     </div>
+    <%=errors_for(game, :release_date)%>
   </div>
 
   <div class="input">
@@ -37,22 +28,26 @@
     <div class="input__container">
       <%= form.text_field :rating, class: "input__content", placeholder: "0.0" %>
     </div>
+    <%=errors_for(game, :rating)%>
   </div>
 
   <div class="select">
     <%= form.label :category, class:"content-xs overline" %>
     <%= form.select :category, categories_collection, { prompt: true }, { class: "select__input" } %>
+    <%=errors_for(game, :category)%>
   </div>
 
   <div class="select">
     <%= form.label :parent_id, "Parent Game", class:"content-xs overline" %>
-    <%= form.text_field :parent_id %>
+    <%= form.collection_select :parent_id, Game.main_game, :id, :name, { include_blank: "Please select" }, { class: "select__input" } %>
+    <%=errors_for(game, :parent_id)%>
   </div>
 
   <div class="input">
     <%= form.label :cover, class:"content-xs overline"%>
     <%=image_tag(game.cover) if game.cover.attached?%>
     <%= form.file_field :cover, class: "input__content"%>
+    <%=errors_for(game, :cover)%>
   </div>
 
   <div>
