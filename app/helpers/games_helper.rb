@@ -1,7 +1,8 @@
 module GamesHelper
   def categories_collection
-    Game.categories.keys.map do |e|
-      e.split("_").join(" ").titleize
-    end
+    [
+      ["Main Game", Game.categories.keys[0]],
+      ["Expansion", Game.categories.keys[1]]
+    ]
   end
 end

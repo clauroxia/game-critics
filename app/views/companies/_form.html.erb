@@ -33,7 +33,7 @@
 
   <div class="input">
     <%= form.label :cover, class:"content-xs overline"%>
-    <%=image_tag(company.cover) if company.cover.attached?%>
+    <%=image_tag(company.cover, class: "thumbnail") if company.cover.attached?%>
     <%= form.file_field :cover, class: "input__content"%>
     <%=errors_for(company, :cover)%>
   </div>

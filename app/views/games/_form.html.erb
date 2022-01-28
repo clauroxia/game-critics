@@ -40,12 +40,12 @@
   <div class="select">
     <%= form.label :parent_id, "Parent Game", class:"content-xs overline" %>
     <%= form.collection_select :parent_id, Game.main_game, :id, :name, { include_blank: "Please select" }, { class: "select__input" } %>
-    <%=errors_for(game, :parent_id)%>
+    <%=errors_for(game, :parent)%>
   </div>
 
   <div class="input">
     <%= form.label :cover, class:"content-xs overline"%>
-    <%=image_tag(game.cover) if game.cover.attached?%>
+    <%=image_tag(game.cover, class: "thumbnail") if game.cover.attached?%>
     <%= form.file_field :cover, class: "input__content"%>
     <%=errors_for(game, :cover)%>
   </div>
