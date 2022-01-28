@@ -1,0 +1,43 @@
+.department-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.department-card__image {
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.department-card__content {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.department-card__actions {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-icon {
+  height: 28px;
+  width: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-300);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.action-icon:hover {
+  background-color: var(--secondary-200);
+}
