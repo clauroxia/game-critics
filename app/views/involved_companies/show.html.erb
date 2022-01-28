@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @involved_company %>
+
+<div>
+  <%= link_to "Edit this involved company", edit_involved_company_path(@involved_company) %> |
+  <%= link_to "Back to involved companies", involved_companies_path %>
+
+  <%= button_to "Destroy this involved company", @involved_company, method: :delete %>
+</div>

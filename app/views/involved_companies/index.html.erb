@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Involved companies</h1>
+
+<div id="involved_companies">
+  <% @involved_companies.each do |involved_company| %>
+    <%= render involved_company %>
+    <p>
+      <%= link_to "Show this involved company", involved_company %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New involved company", new_involved_company_path %>
