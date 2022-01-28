@@ -58,6 +58,9 @@ group :development, :test do
 end
 
 group :development do
+  # Faker for test data
+  gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
