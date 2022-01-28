@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 3116adb3c17cd610fc8b28864364493b015a3e70
+  branch: master
+  specs:
+    faker (2.19.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -237,6 +245,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  faker!
   importmap-rails
   net-http
   pg (~> 1.1)

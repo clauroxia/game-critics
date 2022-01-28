@@ -1,0 +1,110 @@
+[
+  {
+    "category": 0,
+    "name": "Wii"
+  },
+  {
+    "category": 0,
+    "name": "Super Nintendo Entertainment System (SNES)"
+  },
+  {
+    "category": 0,
+    "name": "Wii U"
+  },
+  {
+    "category": 0,
+    "name": "Nintendo Switch"
+  },
+  {
+    "category": 4,
+    "name": "New Nintendo 3DS"
+  },
+  {
+    "category": 0,
+    "name": "PlayStation 4"
+  },
+  {
+    "category": 4,
+    "name": "Game Boy Advance"
+  },
+  {
+    "category": 2,
+    "name": "Virtual Console (Nintendo)"
+  },
+  {
+    "category": 0,
+    "name": "Super Famicom"
+  },
+  {
+    "category": 0,
+    "name": "PlayStation 3"
+  },
+  {
+    "category": 3,
+    "name": "PC (Microsoft Windows)"
+  },
+  {
+    "category": 0,
+    "name": "Xbox 360"
+  },
+  {
+    "category": 0,
+    "name": "Xbox One"
+  },
+  {
+    "category": 2,
+    "name": "Google Stadia"
+  },
+  {
+    "category": 0,
+    "name": "PlayStation"
+  },
+  {
+    "category": 4,
+    "name": "Nintendo DS"
+  },
+  {
+    "category": 3,
+    "name": "Android"
+  },
+  {
+    "category": 3,
+    "name": "iOS"
+  },
+  {
+    "category": 0,
+    "name": "Nintendo 64"
+  },
+  {
+    "category": 0,
+    "name": "Nintendo GameCube"
+  },
+  {
+    "category": 0,
+    "name": "Xbox"
+  },
+  {
+    "category": 3,
+    "name": "Mac"
+  },
+  {
+    "category": 3,
+    "name": "Linux"
+  },
+  {
+    "category": 4,
+    "name": "PlayStation Vita"
+  },
+  {
+    "category": 0,
+    "name": "PlayStation 2"
+  },
+  {
+    "category": 2,
+    "name": "Xbox Live Arcade"
+  },
+  {
+    "category": 2,
+    "name": "PlayStation Network"
+  }
+]

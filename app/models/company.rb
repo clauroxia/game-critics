@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
   # Validations
   validates :name, presence: true, uniqueness: true
-  # validates :cover, presence: true
+  validates :cover, presence: true
 
   # Associations
   has_one_attached :cover, dependent: :destroy

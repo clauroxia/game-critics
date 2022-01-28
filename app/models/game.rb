@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   validates :rating,
             numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 },
             allow_nil: true
-  # validates :cover, presence: true
+  validates :cover, presence: true
   validates :parent,
             inclusion: { in: proc { Game.main_game }, message: "It's not a valid Game" },
             unless: proc { main_game? || category.nil? }
