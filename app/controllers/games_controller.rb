@@ -22,8 +22,7 @@ class GamesController < ApplicationController
   end
 
   # GET /games/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /games
   def create
@@ -65,6 +64,7 @@ class GamesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def game_params
-    params.require(:game).permit(:name, :summary, :release_date, :category, :rating, :games_id)
+    params.require(:game).permit(:name, :summary, :release_date, :category, :rating, :cover,
+                                 :parent_id)
   end
 end
