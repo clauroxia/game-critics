@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: %i[ show edit update destroy ]
+  before_action :set_game, only: %i[show edit update destroy]
 
   # GET /games
   def index
@@ -7,8 +7,7 @@ class GamesController < ApplicationController
   end
 
   # GET /games/1
-  def show
-  end
+  def show; end
 
   # GET /games/new
   def new
@@ -16,8 +15,7 @@ class GamesController < ApplicationController
   end
 
   # GET /games/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /games
   def create
@@ -46,13 +44,15 @@ class GamesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def game_params
-      params.require(:game).permit(:name, :summary, :release_date, :category, :rating, :games_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = Game.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def game_params
+    params.require(:game).permit(:name, :summary, :release_date, :category, :rating, :cover,
+                                 :parent_id)
+  end
 end
