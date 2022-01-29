@@ -6,7 +6,7 @@ class Game < ApplicationRecord
             allow_nil: true
   validates :cover, presence: true
   validates :parent,
-            inclusion: { in: proc { Game.main_game }, message: "It's not a valid Game" },
+            inclusion: { in: proc { Game.main_game }, message: "is not a valid Game" },
             unless: proc { main_game? || category.nil? }
   validates :parent, absence: true, if: proc { main_game? }
 
