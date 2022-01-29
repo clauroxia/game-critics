@@ -13,43 +13,11 @@
 
   <body class="container">
 
-    <header class="header">
-      <div class="container navbar">
-        <%=link_to image_tag("/images/critic-logo.png"), root_path, class: "logo"%>
-        <nav>
-          <ul class="navbar-links" role="list">
-            <li>Welcome User</li>
-            <li><%= link_to 'Edit Profile', "#" %></li>
-            <li><%= link_to 'Games', games_path, class: "link" %></li>
-            <li><%= link_to 'Companies', companies_path, class: "link" %></li>
-            <li><%= button_to 'LOG OUT', "#"  %></li>
-          </ul>
-        </nav>
-        </nav>
-        <div class="js-navbar-menu">
-          <%=image_tag "icons/menu.svg", class: "navbar__menu-icon"%>
-          <%=image_tag "icons/close.svg", class: "navbar__menu-icon-close"%>
-        </div>
-      </div>
-    </header>
+    <%= render partial: "layouts/header" %>
 
     <%= yield %>
 
-    <footer class="footer bg-gray-100">
-      <section class="section-footer">
-        <div class="inline-footer">
-          <p>Build with ❤️ by</p>
-        </div>
-        <div class="inline-footer">
-          <p><a class="lnkdn-link" href="https://pe.linkedin.com/"><i class="fab fa-linkedin"></i></a> Ricardo</p>
-          <p><a class="lnkdn-link" href="https://pe.linkedin.com/"><i class="fab fa-linkedin"></i></a> Ximena</p>
-          <p><a class="lnkdn-link" href="https://pe.linkedin.com/"><i class="fab fa-linkedin"></i></a> Tommy</p>
-        </div>
-        <div class="inline-footer">
-          <p><a class="lnkdn-link" href="https://pe.linkedin.com/"><i class="fab fa-linkedin"></i></a> Claudia</p>
-        </div>
-      </section>
-    </footer>
+    <%= render partial: "layouts/footer" %>
 
     <script>
       const navbarMenu = document.querySelector(".js-navbar-menu");

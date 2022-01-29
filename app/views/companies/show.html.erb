@@ -8,3 +8,7 @@
 
   <%= button_to "Destroy this company", @company, method: :delete %>
 </div>
+
+<%= render 'critics/form_company' %>
+
+<%= render @company.critics %>

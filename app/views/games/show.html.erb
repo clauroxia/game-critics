@@ -8,3 +8,8 @@
 
   <%= button_to "Destroy this game", @game, method: :delete %>
 </div>
+
+<%= render 'critics/form_game' %>
+
+<%= render @game.critics %>
+

@@ -1,0 +1,11 @@
+<%= form_with model: [ @company, @company.critics.build ] do |form| %>
+  <p>
+    <%= form.text_field :title, placeholder: "Critic title" %>
+  </p>
+  <p>
+    <%= form.text_area :body, placeholder: "Critic Body" % %>
+  </p>
+  <p>
+    <%= form.submit "CREATE CRITIC" %>
+  </p>
+<% end %>
