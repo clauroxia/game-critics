@@ -1,58 +1,31 @@
 class PlatformsController < ApplicationController
-  before_action :set_platform, only: %i[ show edit update destroy ]
+  before_action :set_game
 
-  # GET /platforms
-  def index
-    @platforms = Platform.all
-  end
-
-  # GET /platforms/1
-  def show
-  end
-
-  # GET /platforms/new
-  def new
-    @platform = Platform.new
-  end
-
-  # GET /platforms/1/edit
-  def edit
-  end
-
-  # POST /platforms
+  # POST /games/:game_id/platforms
   def create
-    @platform = Platform.new(platform_params)
+    @platform = Platform.find(params[:platform_id])
+    @game.platforms << @platform
 
-    if @platform.save
-      redirect_to @platform, notice: "Platform was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to @game, status: :see_other
   end
 
-  # PATCH/PUT /platforms/1
-  def update
-    if @platform.update(platform_params)
-      redirect_to @platform, notice: "Platform was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /platforms/1
+  # DELETE /games/:game_id/platforms/:id
   def destroy
-    @platform.destroy
-    redirect_to platforms_url, notice: "Platform was successfully destroyed."
+    @platform = @game.platforms.find(params[:id])
+    @game.platforms.delete(@platform)
+
+    redirect_to @game, status: :see_other
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_platform
-      @platform = Platform.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def platform_params
-      params.require(:platform).permit(:name, :category)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = Game.find(params[:game_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def platform_params
+    params.require(:platform).permit(:name, :category)
+  end
 end
