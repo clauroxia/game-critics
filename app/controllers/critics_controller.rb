@@ -1,6 +1,8 @@
 class CriticsController < ApplicationController
   def create
     @critics = @criticable.critics.new(critics_params)
+    @critics.save
+    redirect_to @criticable
   end
 
   def destroy
