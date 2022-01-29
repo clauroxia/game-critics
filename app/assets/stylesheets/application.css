@@ -24,3 +24,7 @@ a {
   color: var(--primary-500);
   text-decoration: none;
 }
+
+body {
+  background-color: var(--gray-100);
+}

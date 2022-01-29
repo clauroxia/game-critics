@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+.select--inline {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
 .input__icon {
   height: 1.5em;
 }

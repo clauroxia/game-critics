@@ -1,58 +1,33 @@
 class InvolvedCompaniesController < ApplicationController
-  before_action :set_involved_company, only: %i[ show edit update destroy ]
+  before_action :set_game
 
-  # GET /involved_companies
-  def index
-    @involved_companies = InvolvedCompany.all
-  end
-
-  # GET /involved_companies/1
-  def show
-  end
-
-  # GET /involved_companies/new
-  def new
-    @involved_company = InvolvedCompany.new
-  end
-
-  # GET /involved_companies/1/edit
-  def edit
-  end
-
-  # POST /involved_companies
+  # POST /games/:game_id/companies
   def create
     @involved_company = InvolvedCompany.new(involved_company_params)
 
     if @involved_company.save
-      redirect_to @involved_company, notice: "Involved company was successfully created."
+      redirect_to @game, status: :see_other
     else
-      render :new, status: :unprocessable_entity
+      redirect_to @game, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /involved_companies/1
-  def update
-    if @involved_company.update(involved_company_params)
-      redirect_to @involved_company, notice: "Involved company was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /involved_companies/1
+  # DELETE /games/:game_id/companies/:company_id
   def destroy
+    @involved_company = @game.involved_companies.find_by(company_id: params[:company_id])
     @involved_company.destroy
-    redirect_to involved_companies_url, notice: "Involved company was successfully destroyed."
+
+    redirect_to @game, status: :see_other
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_involved_company
-      @involved_company = InvolvedCompany.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def involved_company_params
-      params.require(:involved_company).permit(:companies_id, :games_id, :developer, :publisher)
-    end
+  def set_game
+    @game = Game.find(params[:game_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def involved_company_params
+    params.permit(:company_id, :game_id, :developer, :publisher)
+  end
 end
