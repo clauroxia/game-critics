@@ -1,0 +1,14 @@
+.critics__container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.critic {
+  padding-top: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 0.125rem solid var(--gray-300);
+}

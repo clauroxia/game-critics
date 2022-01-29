@@ -1,0 +1,4 @@
+<div class="show__links-container">
+  <%= link_to "#{criticable.class.name} Details", criticable, class:"show__link #{"show__link--active" if active == "details"}" %>
+  <%= link_to "Critics (#{criticable.critics_count})", [criticable, :critics], class:"show__link #{"show__link--active" if active == "critics"}"%>
+</div>

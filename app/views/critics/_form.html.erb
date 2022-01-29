@@ -1,4 +1,4 @@
-<%= form_with model: [ @company, @company.critics.build ], class: "flex flex-column gap-4" do |form| %>
+<%= form_with model: [criticable, critic], class: "flex flex-column gap-2" do |form| %>
   <div class="input">
     <div class="input__container">
       <%= form.text_field :title, class: "input__content", placeholder: "Critic title" %>
