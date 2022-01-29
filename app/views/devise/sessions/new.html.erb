@@ -2,10 +2,13 @@
   <h1 class="heading center-text">Sign in with your account</h2>
 
   <div class="user-form">
+    <% if alert %>
+      <span class="error"><%= alert %></span>
+    <% end %>
+
     <%= render "devise/shared/socials" %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "flex flex-column gap-4"}, data: { turbo: false }) do |f| %>
-      <p class="error"><%= alert %></p>
       <div class="input">
         <%= f.label :email, class:"content-xs overline" %>
         <div class="input__container">
@@ -33,6 +36,6 @@
       </div>
     <% end %>
     <p class="center-text">Don't have an account?</p>
-    <%= link_to "Sign in", new_session_path(resource_name), class: "center-text" %>
+    <%= link_to "Create an account", new_registration_path(resource_name), class: "center-text" %>
   </div>
 </div>
