@@ -1,11 +1,17 @@
-<%= form_with model: [ @game, @game.critics.build ] do |form| %>
-  <p>
-    <%= form.text_field :title, placeholder: "Critic title" %>
-  </p>
-  <p>
-    <%= form.text_area :body, placeholder: "Critic body" %>
-  </p>
-  <p>
-    <%= form.submit "CREATE CRITIC" %>
-  </p>
+<%= form_with model: [ @game, @game.critics.build ], class: "flex flex-column gap-4" do |form| %>
+  <div class="input">
+    <div class="input__container">
+      <%= form.text_field :title, class: "input__content", placeholder: "Critic title" %>
+    </div>
+  </div>
+
+  <div class="input">
+    <div class="input__container">
+      <%= form.text_area :body, class: "input__content", placeholder: "Critic Body" %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit class: "button button--primary full-width" %>
+  </div>
 <% end %>

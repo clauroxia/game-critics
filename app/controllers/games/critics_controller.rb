@@ -1,6 +1,6 @@
 module Games
   class CriticsController < CriticsController
-    before_action set_criticable
+    before_action :set_criticable
 
     private
 
