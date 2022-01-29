@@ -1,58 +1,31 @@
 class GenresController < ApplicationController
-  before_action :set_genre, only: %i[ show edit update destroy ]
+  before_action :set_game
 
-  # GET /genres
-  def index
-    @genres = Genre.all
-  end
-
-  # GET /genres/1
-  def show
-  end
-
-  # GET /genres/new
-  def new
-    @genre = Genre.new
-  end
-
-  # GET /genres/1/edit
-  def edit
-  end
-
-  # POST /genres
+  # POST /games/:game_id/genres
   def create
-    @genre = Genre.new(genre_params)
+    @genre = Genre.find(params[:genre_id])
+    @game.genres << @genre
 
-    if @genre.save
-      redirect_to @genre, notice: "Genre was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to @game, status: :see_other
   end
 
-  # PATCH/PUT /genres/1
-  def update
-    if @genre.update(genre_params)
-      redirect_to @genre, notice: "Genre was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /genres/1
+  # DELETE /games/:game_id/genres/:id
   def destroy
-    @genre.destroy
-    redirect_to genres_url, notice: "Genre was successfully destroyed."
+    @genre = @game.genres.find(params[:id])
+    @game.genres.delete(@genre)
+
+    redirect_to @game, status: :see_other
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_genre
-      @genre = Genre.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def genre_params
-      params.require(:genre).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = Game.find(params[:game_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def genre_params
+    params.require(:genre).permit(:name)
+  end
 end
