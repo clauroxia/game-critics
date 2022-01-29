@@ -1,47 +1,56 @@
-<%= form_with(model: game) do |form| %>
-  <% if game.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
-
-      <ul>
-        <% game.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: game, class: "flex flex-column gap-4") do |form| %>
+  <div class="input">
+    <%= form.label :name, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.text_field :name, class: "input__content", placeholder: "Secret planning" %>
     </div>
-  <% end %>
+    <%=errors_for(game, :name)%>
+  </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="input">
+    <%= form.label :summary, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.text_area :summary, class: "input__content", placeholder: "This is the best game yet..." %>
+    </div>
+    <%=errors_for(game, :summary)%>
+  </div>
+
+  <div class="input">
+    <%= form.label :release_date, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.date_field :release_date, class: "input__content", placeholder: "dd/mm/yyyy" %>
+    </div>
+    <%=errors_for(game, :release_date)%>
+  </div>
+
+  <div class="input">
+    <%= form.label :rating, class:"content-xs overline" %>
+    <div class="input__container">
+      <%= form.text_field :rating, class: "input__content", placeholder: "0.0" %>
+    </div>
+    <%=errors_for(game, :rating)%>
+  </div>
+
+  <div class="select">
+    <%= form.label :category, class:"content-xs overline" %>
+    <%= form.select :category, categories_collection, { prompt: true }, { class: "select__input" } %>
+    <%=errors_for(game, :category)%>
+  </div>
+
+  <div class="select">
+    <%= form.label :parent_id, "Parent Game", class:"content-xs overline" %>
+    <%= form.collection_select :parent_id, Game.main_game, :id, :name, { include_blank: "Please select" }, { class: "select__input" } %>
+    <%=errors_for(game, :parent)%>
+  </div>
+
+  <div class="input">
+    <%= form.label :cover, class:"content-xs overline"%>
+    <%=image_tag(game.cover, class: "thumbnail") if game.cover.attached?%>
+    <%= form.file_field :cover, class: "input__content"%>
+    <%=errors_for(game, :cover)%>
   </div>
 
   <div>
-    <%= form.label :summary, style: "display: block" %>
-    <%= form.text_area :summary %>
-  </div>
-
-  <div>
-    <%= form.label :release_date, style: "display: block" %>
-    <%= form.date_field :release_date %>
-  </div>
-
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.number_field :category %>
-  </div>
-
-  <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.text_field :rating %>
-  </div>
-
-  <div>
-    <%= form.label :games_id, style: "display: block" %>
-    <%= form.text_field :games_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: "button button--primary full-width"%>
   </div>
 <% end %>
