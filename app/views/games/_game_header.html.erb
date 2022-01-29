@@ -1,0 +1,12 @@
+<div class="game-header">
+  <div class="game-header__img"><%= image_tag game.cover %></div>
+  <div class="game-header__content">
+    <div>
+      <h1 class="heading heading--sm"><%= game.name %></h1>
+      <p class="content-xs"><%= game.release_date.year %></p>
+    </div>
+    <div>
+      <span class="content-xl game-header__rating"><%= game.rating %></span>
+    </div>
+  </div>
+</div>

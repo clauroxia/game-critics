@@ -1,0 +1,9 @@
+<%= form_with url: [game, :"#{relation.pluralize}"], class: "select--inline" do |form| %>
+  <%= form.collection_select  :"#{relation}_id",
+                              collection,
+                              :id, :name,
+                              { include_blank: "Select #{relation}" },
+                              { class: "select__input" } %>
+  <%= form.hidden_field :"#{name}", value: true if hidden %>
+  <%= form.submit "Add #{name}", class: "button button--primary button--sm" %>
+<% end %>

@@ -7,7 +7,14 @@ class GamesController < ApplicationController
   end
 
   # GET /games/1
-  def show; end
+  def show
+    @involved_companies = @game.involved_companies
+    @developers = convert_involved(@involved_companies.select(&:developer?))
+    @publishers = convert_involved(@involved_companies.select(&:publisher?))
+    @genres = Genre.all - @game.genres
+    @platforms = Platform.all - @game.platforms
+    @companies = Company.all
+  end
 
   # GET /games/new
   def new
@@ -44,6 +51,11 @@ class GamesController < ApplicationController
   end
 
   private
+
+  # Setting Developers and Publishers
+  def convert_involved(involved)
+    involved.map { |involved_company| Company.find(involved_company.company_id) }
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_game

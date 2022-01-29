@@ -1,11 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @game %>
+<%= render "game_header", game: @game %>
 
-<div>
-  <%= link_to "Edit this game", edit_game_path(@game) %> |
+<div class="game-details">
+  <p class="content-xs center-text"><%= @game.summary %></p>
 
-  <%= button_to "Destroy this game", @game, method: :delete %>
+  <div class="show__links-container">
+    <%= link_to "Game Details", @game, class:"show__link show__link--active" %>
+    <%= link_to "Critics (#{@game.critics_count})", [@game, :critics], class:"show__link"%>
+  </div>
+
+  <%= render "game_pills", content: @game.genres, title: "Genres", game: @game %>
+  <%= render "game_pills", content: @game.platforms, title: "Platforms", game: @game %>
+  <%= render "game_pills", content: @developers, title: "Developers", game: @game %>
+  <%= render "game_pills", content: @publishers, title: "Publishers", game: @game %>
+
+  <h2 class="heading heading--xs">Add relations</h2>
+  <%= render "relations_form", game: @game, collection: @genres, relation: "genre", name: "genre", hidden: false %>
+  <%= render "relations_form", game: @game, collection: @platforms, relation: "platform", name: "platform", hidden: false %>
+  <%= render "relations_form", game: @game, collection: @companies - @developers, relation: "company", name: "developer", hidden: true %>
+  <%= render "relations_form", game: @game, collection: @companies - @publishers, relation: "company", name: "publisher", hidden: true %>
+
+  <%= link_to "Back", games_path, class: "center-text" %>
 </div>
 
 <%= render 'critics/form_game' %>
