@@ -1,0 +1,21 @@
+.user-form {
+  padding: 24px 16px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.error {
+  text-align: center;
+  color: var(--error-300);
+}

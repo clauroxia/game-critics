@@ -1,0 +1,49 @@
+<div class="section flex flex-column gap-4">
+  <h1 class="heading center-text">Create an account</h1>
+
+  <div class="user-form">
+    <%= render "devise/shared/socials" %>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "flex flex-column gap-4"}, data: { turbo: false }) do |f| %>
+      <div class="input">
+          <%= f.label :username, class:"content-xs overline" %>
+          <div class="input__container">
+            <%= f.text_field :username, class: "input__content", placeholder: "example" %>
+          </div>
+          <%=errors_for(resource, :username)%>
+      </div>
+
+      <div class="input">
+      <%= f.label :email, class:"content-xs overline" %>
+          <div class="input__container">
+              <%= f.email_field :email, class: "input__content", placeholder: "example@mail.com" %>
+          </div>
+          <%=errors_for(resource, :email)%>
+      </div>
+
+      <div class="input">
+      <%= f.label :password, class:"content-xs overline" %>
+          <div class="input__container">
+              <%= f.password_field :password, class: "input__content", placeholder: "******" %>
+          </div>
+          <%=errors_for(resource, :password)%>
+      </div>
+
+      <div class="input">
+      <%= f.label :password_confirmation, class:"content-xs overline" %>
+          <div class="input__container">
+              <%= f.password_field :password_confirmation, class: "input__content", placeholder: "******" %>
+          </div>
+          <%=errors_for(resource, :password_confirmation)%>
+      </div>
+
+      <div>
+          <%= f.submit "Sign up", class: "button button--primary full-width" %>
+      </div>
+    <% end %>
+
+    <p class="center-text">Already a member?</p>
+
+    <%= link_to "Sign in", new_session_path(resource_name), class: "center-text"%>
+  </div>
+</div>
