@@ -1,0 +1,56 @@
+<div class="section flex flex-column gap-4">
+<h1 class="heading center-text">Edit Profile</h1>
+<div class="user-form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "flex flex-column gap-4" }, data: { turbo: false }) do |f| %>
+    <div class="input">
+        <%= f.label :username, class:"content-xs overline" %>
+            <div class="input__container">
+                <%= f.text_field :username, class: "input__content", placeholder: "example" %>
+            </div>
+        <%=errors_for(resource, :username)%>
+    </div>
+
+    <div class="input">
+    <%= f.label :email, class:"content-xs overline" %>
+        <div class="input__container">
+            <%= f.email_field :email, class: "input__content", placeholder: "example@mail.com" %>
+        </div>
+        <%=errors_for(resource, :email)%>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="input">
+    <%= f.label :password, class:"content-xs overline" %>
+        <div class="input__container">
+            <%= f.password_field :password, class: "input__content", placeholder: "******" %>
+        </div>
+        <%=errors_for(resource, :password)%>
+    </div>
+
+    <div class="input">
+    <%= f.label :password_confirmation, class:"content-xs overline" %>
+        <div class="input__container">
+            <%= f.password_field :password_confirmation, class: "input__content", placeholder: "******" %>
+        </div>
+        <%=errors_for(resource, :password_confirmation)%>
+    </div>
+
+    <div class="input">
+      <%= f.label :current_password, class:"content-xs overline" %>
+      <div class="input__container">
+        <%= f.password_field :current_password, class: "input__content", placeholder: "******" %>
+      </div>
+      <%=errors_for(resource, :current_password)%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: "button button--primary full-width" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Back", :back, class: "center-text" %>
+  </div>
+</div>
