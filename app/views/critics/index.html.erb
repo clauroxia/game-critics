@@ -1,0 +1,30 @@
+<%= render partial:"#{@name.pluralize}/#{@name}_header", locals: { resource: @criticable } %>
+
+<%= render "criticable_links", criticable: @criticable, active: "critics" %>
+
+<div class="critics__container">
+  <%= render "form", criticable: @criticable, critic: @critic %>
+
+  <% @critics.each do |critic| %>
+    <div class="critic">
+      <div class="critic__header">
+        <h4 class="content-lg"><%= critic.title.capitalize %></h4>
+        <p class="content-sm gray-300">by user</p>
+      </div>
+      <p><%= critic.body %></p>
+      <div class="critic__footer">
+        <span class="content-sm gray-300">Send <%= time_ago_in_words(critic.updated_at) %> ago</span>
+        <div class="critic__links">
+          <%= link_to "Approve", "#", class: "critic__link" %>
+          <%= link_to image_tag("icons/trash.svg"), [@criticable, critic], data: { 
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+            } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Back", :"#{@name.pluralize}", class: "center-text" %>
+</div>
+<%=  %>
