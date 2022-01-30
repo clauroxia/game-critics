@@ -12,8 +12,8 @@
           <%=link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }%>
         </li>
       <%else%>
-        <li><%=link_to "Sign in", new_user_session_path%></li>
-        <li><%=link_to "Sign up", new_user_registration_path%></li>
+        <p>Sign in to start criting games and companies</p>
+        <li><%=link_to "Sign in", new_user_session_path, class: "button button--sm button--primary" %></li>
       <%end%>
       </ul>
     </nav>
