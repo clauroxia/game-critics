@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "games#index"
+
   resources :games do
     resources :critics, only: %w[index create destroy], module: :games
     resources :platforms, only: %w[create destroy]
