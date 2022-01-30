@@ -141,3 +141,13 @@
 .thumbnail {
   width: 35%;
 }
+
+/* Notices */
+.success {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #def2d6;
+  margin: 1rem;
+  padding: 1rem;
+}
