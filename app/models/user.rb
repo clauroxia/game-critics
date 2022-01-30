@@ -7,6 +7,9 @@ class User < ApplicationRecord
   # Validations
   validates :username, presence: true, uniqueness: true, length: { maximum: 16 }
 
+  # Enums
+  enum role: { user: 0, admin: 1 }
+
   # Association
   has_many :critics, dependent: :destroy
 

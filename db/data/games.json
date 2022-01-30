@@ -1,5 +1,155 @@
 [
   {
+    "name": "The Last of Us",
+    "summary": "A third person shooter/stealth/survival hybrid, in which twenty years after the outbreak of a parasitic fungus which takes over the neural functions of humans, Joel, a Texan with a tragic familial past, finds himself responsible with smuggling a fourteen year old girl named Ellie to a militia group called the Fireflies, while avoiding strict and deadly authorities, infected fungal hosts and other violent survivors.",
+    "release_date": "2013-06-14",
+    "category": 0,
+    "rating": 93.05,
+    "parent": null,
+    "genres": ["Shooter", "Adventure"],
+    "platforms": [
+      {
+        "category": 0,
+        "name": "PlayStation 3"
+      }
+    ],
+    "involved_companies": [
+      {
+        "name": "Naughty Dog",
+        "developer": true,
+        "publisher": false
+      },
+      {
+        "name": "Sony Computer Entertainment, Inc. (SCEI)",
+        "developer": false,
+        "publisher": true
+      }
+    ]
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "summary": "RPG and sequel to The Witcher 2 (2011), The Witcher 3 follows witcher Geralt of Rivia as he seeks out his former lover and his young subject while intermingling with the political workings of the wartorn Northern Kingdoms. Geralt has to fight monsters and deal with people of all sorts in order to solve complex problems and settle contentious disputes, each ranging from the personal to the world-changing.",
+    "release_date": "2015-05-19",
+    "category": 0,
+    "rating": 93.61,
+    "parent": null,
+    "genres": ["Role-playing (RPG)", "Adventure"],
+    "platforms": [
+      {
+        "category": 3,
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "category": 0,
+        "name": "PlayStation 4"
+      },
+      {
+        "category": 0,
+        "name": "Xbox One"
+      }
+    ],
+    "involved_companies": [
+      {
+        "name": "WB Games",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "Bandai Namco Entertainment",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "cdp.pl",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "1C Company",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "Spike ChunSoft",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "CD Projekt RED",
+        "developer": true,
+        "publisher": false
+      }
+    ]
+  },
+  {
+    "name": "Bloodborne",
+    "summary": "An action RPG in which the player embodies a Hunter who, after being transfused with the mysterious blood local to the city of Yharnam, sets off into a \"night of the Hunt\", an extended night in which Hunters may phase in and out of dream and reality in order to thin the outbreak of abominable beasts that plague the land and, for the more resilient and insightful Hunters, uncover the answers to the Hunt's many mysteries.",
+    "release_date": "2015-03-24",
+    "category": 0,
+    "rating": 91.33,
+    "parent": null,
+    "genres": ["Role-playing (RPG)", "Adventure"],
+    "platforms": [
+      {
+        "category": 0,
+        "name": "PlayStation 4"
+      }
+    ],
+    "involved_companies": [
+      {
+        "name": "Sony Computer Entertainment, Inc. (SCEI)",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "FromSoftware",
+        "developer": true,
+        "publisher": false
+      }
+    ]
+  },
+  {
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "summary": "In this 3D open-world entry in the Zelda series, Link is awakened from a deep slumber without his past memories in the post-apocalyptic Kingdom of Hyrule, and sets off on a journey to defeat the ancient evil Calamity Ganon. Link treks, climbs and glides through fields, forests and mountain ranges while meeting and helping friendly folk and defeating enemies in order to gather up the strength to face Ganon.",
+    "release_date": "2017-03-03",
+    "category": 0,
+    "rating": 94.81,
+    "parent": null,
+    "genres": ["Role-playing (RPG)", "Adventure"],
+    "platforms": [
+      {
+        "category": 0,
+        "name": "Wii U"
+      },
+      {
+        "category": 0,
+        "name": "Nintendo Switch"
+      }
+    ],
+    "involved_companies": [
+      {
+        "name": "Nintendo of America",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "Nintendo of Europe",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "Nintendo",
+        "developer": false,
+        "publisher": true
+      },
+      {
+        "name": "Nintendo EPD",
+        "developer": true,
+        "publisher": false
+      }
+    ]
+  },
+  {
     "name": "Super Mario World",
     "summary": "A 2D platformer and first entry on the SNES in the Super Mario franchise, Super Mario World follows Mario as he attempts to defeat Bowser's underlings and rescue Princess Peach from his clutches. The game features a save system, a less linear world map, an expanded movement arsenal and numerous new items for Mario, alongside new approaches to level design and art direction.",
     "release_date": "1990-11-21",
@@ -199,47 +349,7 @@
       }
     ]
   },
-  {
-    "name": "The Legend of Zelda: Breath of the Wild",
-    "summary": "In this 3D open-world entry in the Zelda series, Link is awakened from a deep slumber without his past memories in the post-apocalyptic Kingdom of Hyrule, and sets off on a journey to defeat the ancient evil Calamity Ganon. Link treks, climbs and glides through fields, forests and mountain ranges while meeting and helping friendly folk and defeating enemies in order to gather up the strength to face Ganon.",
-    "release_date": "2017-03-03",
-    "category": 0,
-    "rating": 94.81,
-    "parent": null,
-    "genres": ["Role-playing (RPG)", "Adventure"],
-    "platforms": [
-      {
-        "category": 0,
-        "name": "Wii U"
-      },
-      {
-        "category": 0,
-        "name": "Nintendo Switch"
-      }
-    ],
-    "involved_companies": [
-      {
-        "name": "Nintendo of America",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "Nintendo of Europe",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "Nintendo",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "Nintendo EPD",
-        "developer": true,
-        "publisher": false
-      }
-    ]
-  },
+  
   {
     "name": "Persona 5",
     "summary": "Persona 5, a turn-based JRPG with visual novel elements, follows a high school student with a criminal record for a crime he didn't commit. Soon he meets several characters who share similar fates to him, and discovers a metaphysical realm which allows him and his friends to channel their pent-up frustrations into becoming a group of vigilantes reveling in aesthetics and rebellion while fighting corruption.",
@@ -316,61 +426,6 @@
       },
       {
         "name": "BioWare Edmonton",
-        "developer": true,
-        "publisher": false
-      }
-    ]
-  },
-  {
-    "name": "The Witcher 3: Wild Hunt",
-    "summary": "RPG and sequel to The Witcher 2 (2011), The Witcher 3 follows witcher Geralt of Rivia as he seeks out his former lover and his young subject while intermingling with the political workings of the wartorn Northern Kingdoms. Geralt has to fight monsters and deal with people of all sorts in order to solve complex problems and settle contentious disputes, each ranging from the personal to the world-changing.",
-    "release_date": "2015-05-19",
-    "category": 0,
-    "rating": 93.61,
-    "parent": null,
-    "genres": ["Role-playing (RPG)", "Adventure"],
-    "platforms": [
-      {
-        "category": 3,
-        "name": "PC (Microsoft Windows)"
-      },
-      {
-        "category": 0,
-        "name": "PlayStation 4"
-      },
-      {
-        "category": 0,
-        "name": "Xbox One"
-      }
-    ],
-    "involved_companies": [
-      {
-        "name": "WB Games",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "Bandai Namco Entertainment",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "cdp.pl",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "1C Company",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "Spike ChunSoft",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "CD Projekt RED",
         "developer": true,
         "publisher": false
       }
@@ -531,33 +586,6 @@
       {
         "name": "Rockstar Games",
         "developer": true,
-        "publisher": true
-      }
-    ]
-  },
-  {
-    "name": "The Last of Us",
-    "summary": "A third person shooter/stealth/survival hybrid, in which twenty years after the outbreak of a parasitic fungus which takes over the neural functions of humans, Joel, a Texan with a tragic familial past, finds himself responsible with smuggling a fourteen year old girl named Ellie to a militia group called the Fireflies, while avoiding strict and deadly authorities, infected fungal hosts and other violent survivors.",
-    "release_date": "2013-06-14",
-    "category": 0,
-    "rating": 93.05,
-    "parent": null,
-    "genres": ["Shooter", "Adventure"],
-    "platforms": [
-      {
-        "category": 0,
-        "name": "PlayStation 3"
-      }
-    ],
-    "involved_companies": [
-      {
-        "name": "Naughty Dog",
-        "developer": true,
-        "publisher": false
-      },
-      {
-        "name": "Sony Computer Entertainment, Inc. (SCEI)",
-        "developer": false,
         "publisher": true
       }
     ]
@@ -953,33 +981,6 @@
         "name": "Take-Two Interactive",
         "developer": false,
         "publisher": true
-      }
-    ]
-  },
-  {
-    "name": "Bloodborne",
-    "summary": "An action RPG in which the player embodies a Hunter who, after being transfused with the mysterious blood local to the city of Yharnam, sets off into a \"night of the Hunt\", an extended night in which Hunters may phase in and out of dream and reality in order to thin the outbreak of abominable beasts that plague the land and, for the more resilient and insightful Hunters, uncover the answers to the Hunt's many mysteries.",
-    "release_date": "2015-03-24",
-    "category": 0,
-    "rating": 91.33,
-    "parent": null,
-    "genres": ["Role-playing (RPG)", "Adventure"],
-    "platforms": [
-      {
-        "category": 0,
-        "name": "PlayStation 4"
-      }
-    ],
-    "involved_companies": [
-      {
-        "name": "Sony Computer Entertainment, Inc. (SCEI)",
-        "developer": false,
-        "publisher": true
-      },
-      {
-        "name": "FromSoftware",
-        "developer": true,
-        "publisher": false
       }
     ]
   },
