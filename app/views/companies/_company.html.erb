@@ -1,22 +1,37 @@
 <div id="<%= dom_id company %>">
-  <p>
-    <strong>Name:</strong>
-    <%= company.name %>
-  </p>
+  <div class="container-m flex">
+    <div class="container-cover flex flex-center">
+      <%=image_tag company.cover, class: "company-card__image"%>
+    </div>
+    <div class="container-content">
+      <div class="container-company company-card__content">
+        <div class="content-company mb-0">
+          <%=link_to content_tag("p", company.name), company_path(company)%>
+        </div>
+        <div class="content-xs gray-300">
+          <p><%= company.start_date.year if company.start_date %> - 
+            <%= company.country %>
+          </p>
+        </div>
+      </div>
+  
+      <div class="container section-xs content-xs gray-400">
+        <%= truncate(company.description, length: 60, separator: " ") %>
+      </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= company.description %>
-  </p>
+      <div class="section-xs flex flex-between flex-center content-xs gray-300">
+        <p><%= company.games.count%> Games</p>
+        <div class="company-card__actions">
+          <%=link_to image_tag("icons/pencil.svg"), 
+                      edit_company_path(company), 
+                      class: "action-icon"%>
 
-  <p>
-    <strong>Start date:</strong>
-    <%= company.start_date %>
-  </p>
-
-  <p>
-    <strong>Country:</strong>
-    <%= company.country %>
-  </p>
-
+          <%=link_to image_tag("icons/trash.svg"), 
+                        company_path(company), 
+                        method: :delete, data: { turbo: "false" },
+                        class: "action-icon"%>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

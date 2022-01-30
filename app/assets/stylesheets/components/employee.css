@@ -1,4 +1,4 @@
-.employee-card {
+.game-card {
   padding: 8px 16px;
   display: flex;
   flex-direction: column;
@@ -7,42 +7,45 @@
   overflow: hidden;
 }
 
-.employee-card__content {
+.game-card__content {
+  padding: 8px 8px;
   display: flex;
-  gap: 8px;
+  justify-content: space-between;
   align-items: center;
 }
 
-.employee-card__image {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+.game-card__image {
+  height: 160px;
+  width: 120px;
 }
 
-.employee-card__data {
+.game-card__data {
   display: flex;
   flex-direction: column;
 }
 
-.employee-card__actions {
+.game-card__actions {
+  height: 16px;
+  width: 40px;
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  align-items: center;
+  gap: 12.6px;
+
 }
 
 .action-icon {
-  height: 28px;
-  width: 28px;
+  height: 16px;
+  width: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-300);
-  border-radius: 50%;
-  border: none;
+  background-color: white;
   cursor: pointer;
+  border: var(--gray-300);
 }
+
 
 .action-icon:hover {
   background-color: var(--secondary-200);
 }
+

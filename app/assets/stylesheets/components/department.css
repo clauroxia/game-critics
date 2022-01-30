@@ -1,4 +1,4 @@
-.department-card {
+.company-card {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -6,25 +6,30 @@
   overflow: hidden;
 }
 
-.department-card__image {
-  max-height: 150px;
-  object-fit: cover;
+.company-card__image {
+  height: 160px;
+  width: 120px;
 }
 
-.department-card__content {
-  padding: 8px 16px;
+.company-card__image-show {
+  width: 328px;
+  height: 160px;
+}
+
+.company-card__content {
+  padding: 8px 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
 }
 
-.department-card__actions {
-  padding: 8px 16px;
+.company-card__actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  align-items: center;
-}
+  gap: 12.6px;
+  }
 
 .action-icon {
   height: 28px;
@@ -32,10 +37,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-300);
+  background-color: white;
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  filter: var(--gray-300);
 }
 
 .action-icon:hover {

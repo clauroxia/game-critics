@@ -1,3 +1,7 @@
+.section-xs {
+  padding: 8px;
+}
+
 .section {
   padding: 16px;
 }
@@ -6,8 +10,74 @@
   padding: 32px;
 }
 
+.container-xs {
+  width: 42px;
+  height: 32px;
+  border-radius: 0.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-cover {
+  max-width: 120px;
+  height: 160px;
+}
+
+.container-company {
+  max-width: 192px;
+  height: 72px;
+}
+
+.container-actions {
+  max-width: 192px;
+  height: 16px;
+}
+
+.navbar {
+  width: 296px;
+  height: 40px;
+  gap: 16px;
+}
+
+.container-navbar {
+  width: 140px;
+  height: 40px;
+}
+
+.container-content {
+  width: 208px;
+  height: 160px;
+}
+
+.container-ssm {
+  max-width: 328px;
+  height: 28px;
+}
+
+
+.container-sm {
+  max-width: 328px;
+  height: 32px;
+}
+
+.container-mm {
+  max-width: 328px;
+  height: 48px;
+}
+
+.container-m {
+  max-width: 328px;
+  height: 160px;
+}
+
+.container-xm {
+  max-width: 328px;
+  height: 224px;
+}
+
 .container {
-  max-width: 760px;
+  max-width: 360px;
   margin: auto;
 }
 

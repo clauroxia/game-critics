@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Games</h1>
+<section class="section bg-gray-100">
+  <div class="container-sm mb-4">
+    <h1 class="heading heading--sm">Games</h1>
+  </div>
 
-<div id="games">
-  <% @games.first(5).each do |game| %>
-    <%= render game %>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
-  <% end %>
-</div>
+  <div class="mb-4">
+    <%= link_to "New game", new_game_path, class: "button button--primary fit-content content-xs" %>
+  </div>
 
-<%= link_to "New game", new_game_path %>
+  <div id="games">
+    <% @games.first(5).each do |game| %>
+      <div class="bg-white mb-4">
+        <%= render game %>
+      </div>
+    <% end %>
+  </div>
+  
+</section>
+
+
