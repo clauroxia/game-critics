@@ -5,7 +5,7 @@
 <div class="critics__container">
   <%= render "form", criticable: @criticable, critic: @critic %>
 
-  <% @critics.reverse.each do |critic| %>
+  <% policy_scope(@critics).sort_by { |critic| critic.approved? ? -1 : 1 }.reverse.each do |critic| %>
     <div class="critic">
       <div class="critic__header">
         <h4 class="content-lg"><%= critic.title.capitalize %></h4>
@@ -15,7 +15,7 @@
       <div class="critic__footer">
         <span class="content-sm gray-300">Send <%= time_ago_in_words(critic.updated_at) %> ago</span>
         <div class="critic__links">
-          <%= link_to("Approve", "#", class: "critic__link") unless critic.approved? %>
+          <%= link_to("Approve", [@criticable, critic], class: "critic__link", data: { turbo_method: :patch }) unless critic.approved? %>
           <%= link_to image_tag("icons/trash.svg"), [@criticable, critic], data: { 
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"

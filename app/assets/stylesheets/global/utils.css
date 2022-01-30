@@ -149,12 +149,19 @@
   width: 35%;
 }
 
-/* Notices */
-.success {
+/* Flashes */
+.flash {
   display: flex;
   gap: 10px;
   align-items: center;
-  background-color: #def2d6;
   margin: 1rem;
   padding: 1rem;
+}
+
+.flash--success {
+  background-color: #def2d6;
+}
+
+.flash--error {
+  background-color: #f2d6dc;
 }

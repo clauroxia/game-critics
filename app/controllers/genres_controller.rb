@@ -3,7 +3,7 @@ class GenresController < ApplicationController
 
   # POST /games/:game_id/genres
   def create
-    @genre = Genre.find(params[:genre_id])
+    @genre = authorize Genre.find(params[:genre_id])
     @game.genres << @genre
 
     redirect_to @game, status: :see_other
@@ -11,7 +11,7 @@ class GenresController < ApplicationController
 
   # DELETE /games/:game_id/genres/:id
   def destroy
-    @genre = @game.genres.find(params[:id])
+    @genre = authorize @game.genres.find(params[:id])
     @game.genres.delete(@genre)
 
     redirect_to @game, status: :see_other

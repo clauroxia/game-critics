@@ -18,15 +18,17 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = authorize Game.new
   end
 
   # GET /games/1/edit
-  def edit; end
+  def edit
+    authorize @game
+  end
 
   # POST /games
   def create
-    @game = Game.new(game_params)
+    @game = authorize Game.new(game_params)
 
     if @game.save
       redirect_to @game, notice: "Game was successfully created."
@@ -37,6 +39,7 @@ class GamesController < ApplicationController
 
   # PATCH/PUT /games/1
   def update
+    authorize @game
     if @game.update(game_params)
       redirect_to @game, notice: "Game was successfully updated."
     else
@@ -46,6 +49,7 @@ class GamesController < ApplicationController
 
   # DELETE /games/1
   def destroy
+    authorize @game
     @game.destroy
     redirect_to games_url, status: :see_other
   end

@@ -3,10 +3,8 @@
   <div class="game-header__content">
     <div>
       <h1 class="heading heading--sm"><%= resource.name %></h1>
-      <p class="content-xs"><%= resource.release_date.year %></p>
+      <%= content_tag "p", resource.release_date.year, class: "content-xs" if resource.release_date %>
     </div>
-    <div>
-      <span class="content-xl game-header__rating"><%= resource.rating %></span>
-    </div>
+    <%= content_tag "span", resource.rating, class: "content-xl game-header__rating" if resource.rating %>
   </div>
 </div>

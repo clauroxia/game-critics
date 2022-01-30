@@ -3,7 +3,7 @@ class InvolvedCompaniesController < ApplicationController
 
   # POST /games/:game_id/companies
   def create
-    @involved_company = InvolvedCompany.new(involved_company_params)
+    @involved_company = authorize InvolvedCompany.new(involved_company_params)
 
     if @involved_company.save
       redirect_to @game, status: :see_other
@@ -14,7 +14,7 @@ class InvolvedCompaniesController < ApplicationController
 
   # DELETE /games/:game_id/companies/:company_id
   def destroy
-    @involved_company = @game.involved_companies.find_by(company_id: params[:company_id])
+    @involved_company = authorize @game.involved_companies.find_by(company_id: params[:company_id])
     @involved_company.destroy
 
     redirect_to @game, status: :see_other
