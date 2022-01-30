@@ -6,18 +6,20 @@ class CriticsController < ApplicationController
   end
 
   def create
+    @critics = @criticable.critics.scope
+    @name = @criticable.class.name.downcase
     @critic = @criticable.critics.new(critics_params)
 
     if @critic.save
       redirect_to [@criticable, :critics], status: :see_other
     else
-      redirect_to [@criticable, :critics], status: :unprocessable_entity
+      render :index, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @critics = @criticable.critics.find(params[:id])
-    @critics.destroy
+    @critic = @criticable.critics.find(params[:id])
+    @critic.destroy
 
     redirect_to [@criticable, :critics], status: :see_other
   end

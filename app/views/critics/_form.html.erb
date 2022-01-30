@@ -3,12 +3,14 @@
     <div class="input__container">
       <%= form.text_field :title, class: "input__content", placeholder: "Critic title" %>
     </div>
+    <%=errors_for(critic, :title)%>
   </div>
 
   <div class="input">
     <div class="input__container">
       <%= form.text_area :body, class: "input__content", placeholder: "Critic Body" %>
     </div>
+    <%=errors_for(critic, :body)%>
   </div>
 
   <div>
