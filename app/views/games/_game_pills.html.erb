@@ -4,7 +4,7 @@
     <% content.each do |item| %>
       <span class="content-xs game-details__pill">
         <%= item.name %>
-        <% if current_user.role == 1 %>
+        <% if current_user.admin? %>
           <%= link_to image_tag("icons/X.svg"), [game, item], data: { 
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"
