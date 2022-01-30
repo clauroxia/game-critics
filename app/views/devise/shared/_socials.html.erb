@@ -1,8 +1,14 @@
-<div class="flex flex-column gap-4 center-text">
-    <p class="content-xs overline">Continue with</p>
-    <div class="socials">
-    <%= link_to "Github", "#", class: "button button--secondary" %>
-    <%= link_to "Twitter", "#", class: "button button--secondary" %>
+<%- if devise_mapping.omniauthable? %>
+    <div class="flex flex-column gap-4 center-text">
+        <p class="content-xs overline">Continue with</p>
+        <div class="socials">
+            <%= resource_class.omniauth_providers.each do |provider| %>
+                <%=form_with(url: omniauth_authorize_path(resource_name, provider), method: :post, data: {turbo: false}) do |f| %>
+                    <%= f.submit OmniAuth::Utils.camelize(provider), class: "button button--secondary" %>
+                <% end %>
+            <% end %>
+        <%= link_to "Twitter", "#", class: "button button--secondary" %>
+        </div>
+        <p class="content-xs overline">or</p>
     </div>
-    <p class="content-xs overline">or</p>
-</div>
+<% end %>
