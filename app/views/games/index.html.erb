@@ -8,7 +8,7 @@
   </div>
 
   <div id="games">
-    <% @games.first(5).each do |game| %>
+    <% @games.each do |game| %>
       <div class="bg-white mb-4">
         <%= render game %>
       </div>

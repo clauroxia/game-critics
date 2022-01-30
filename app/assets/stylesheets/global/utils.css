@@ -20,6 +20,10 @@
   color: #fff;
 }
 
+.green {
+  color: green;
+}
+
 .primary-500 {
   color: var(--primary-500);
 }
@@ -45,6 +49,9 @@
 }
 
 /* Margins */
+.ml-4 {
+  margin-left: 1rem;
+}
 .mb-8 {
   margin-bottom: 2rem;
 }
