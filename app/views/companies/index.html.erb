@@ -1,14 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Companies</h1>
+<section class="section bg-gray-100">
+  <div class="container-sm mb-4">
+    <h1 class="heading heading--sm">Companies</h1>
+  </div>
+  
+  <div class="mb-4">
+    <%= link_to "New company", new_company_path, class: "button button--primary fit-content content-xs" %>
+  </div>
 
-<div id="companies">
-  <% @companies.each do |company| %>
-    <%= render company %>
-    <p>
-      <%= link_to "Show this company", company %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New company", new_company_path %>
+  <div id="companies">
+    <% @companies.first(5).each do |company| %>
+      <div class="bg-white mb-4">
+        <%= render company %>
+      </div>
+    <% end %>
+  </div>
+  
+</section>

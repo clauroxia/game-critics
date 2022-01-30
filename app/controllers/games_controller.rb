@@ -47,7 +47,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   def destroy
     @game.destroy
-    redirect_to games_url, notice: "Game was successfully destroyed."
+    redirect_to games_url, status: :see_other
   end
 
   private

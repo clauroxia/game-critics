@@ -1,0 +1,34 @@
+.company-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.company-card__image {
+  height: 160px;
+  width: 120px;
+}
+
+.company-card__image-show {
+  width: 328px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.company-card__content {
+  padding: 8px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.company-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12.6px;
+  }
+  

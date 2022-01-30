@@ -1,0 +1,13 @@
+<section class="section bg-gray-100">
+  <div class="container-m mb-4">
+    <%=image_tag resource.cover, class: "company-card__image-show"%>
+  </div>
+
+  <div class="container-mm flex flex-column">
+    <h1 class="heading heading--sm"><%=resource.name%></h1>
+    <div>
+      <p class="content-xs"><%= resource.start_date.year if resource.start_date %> - <%= resource.country %>
+      </p>
+    </div>
+  </div>
+</section>
