@@ -5,17 +5,19 @@
 <div class="game-details">
   <p class="content-xs center-text"><%= @game.summary %></p>
 
-  <%= render "game_pills", content: @game.genres, title: "Genres", game: @game %>
-  <%= render "game_pills", content: @game.platforms, title: "Platforms", game: @game %>
-  <%= render "game_pills", content: @developers, title: "Developers", game: @game %>
-  <%= render "game_pills", content: @publishers, title: "Publishers", game: @game %>
+  <%= render "game_pills", content: @game.genres, title: "Genres", game: @game unless @game.genres.empty? %>
+  <%= render "game_pills", content: @game.platforms, title: "Platforms", game: @game unless @game.platforms.empty? %>
+  <%= render "game_pills", content: @developers, title: "Developers", game: @game unless @developers.empty? %>
+  <%= render "game_pills", content: @publishers, title: "Publishers", game: @game unless @publishers.empty?%>
 
-  <h2 class="heading heading--xs">Add relations</h2>
-  <%= render "relations_form", game: @game, collection: @genres, relation: "genre", name: "genre", hidden: false %>
-  <%= render "relations_form", game: @game, collection: @platforms, relation: "platform", name: "platform", hidden: false %>
-  <%= render "relations_form", game: @game, collection: @companies - @developers, relation: "company", name: "developer", hidden: true %>
-  <%= render "relations_form", game: @game, collection: @companies - @publishers, relation: "company", name: "publisher", hidden: true %>
+  <% if current_user.admin? %>
+    <h2 class="heading heading--xs">Add relations</h2>
+    <%= render "relations_form", game: @game, collection: @genres, relation: "genre", name: "genre", hidden: false %>
+    <%= render "relations_form", game: @game, collection: @platforms, relation: "platform", name: "platform", hidden: false %>
+    <%= render "relations_form", game: @game, collection: @companies - @developers, relation: "company", name: "developer", hidden: true %>
+    <%= render "relations_form", game: @game, collection: @companies - @publishers, relation: "company", name: "publisher", hidden: true %>
 
-  <%= link_to "Back", games_path, class: "center-text" %>
+    <%= link_to "Back", games_path, class: "center-text" %>
+  <% end %>
 </div>
 

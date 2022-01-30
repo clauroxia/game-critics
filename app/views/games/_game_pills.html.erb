@@ -2,10 +2,15 @@
   <p class="content-sm"><%= title %>:</p>
   <div class="game-details__pills-container">
     <% content.each do |item| %>
-      <span class="content-xs game-details__pill"><%= item.name %><%= link_to image_tag("icons/X.svg"), [game, item], data: { 
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-        } %></span>
+      <span class="content-xs game-details__pill">
+        <%= item.name %>
+        <% if current_user.role == 1 %>
+          <%= link_to image_tag("icons/X.svg"), [game, item], data: { 
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+            } %>
+        <% end%>
+      </span>
     <% end %>
   </div>
 </div>
