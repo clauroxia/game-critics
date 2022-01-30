@@ -1,0 +1,10 @@
+.action-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card__link {
+  color: var(--gray-400);
+}

@@ -1,10 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @company %>
+<%= render "company_header", resource: @company %>
 
-<div>
-  <%= link_to "Edit this company", edit_company_path(@company) %> |
-  <%= link_to "Back to companies", companies_path %>
+<%= render partial: "critics/criticable_links", locals: { criticable: @company, active: "details" } %>
 
-  <%= button_to "Destroy this company", @company, method: :delete %>
-</div>
+<section class="section bg-gray-100">
+    <p class="text-center content-xs mb-4">
+      <%= @company.description %>
+    </p>
+
+    <h2 class="heading heading--xs mb-4">Games (<%= @company.games.count %>)</h2>
+
+    <div class="games">
+      <% @company.games.each do |game| %>
+        <div class="bg-white mb-4">
+          <%= render game %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="content-s text-center primary-500">
+        <%= link_to "Back", companies_path %>
+    </div>
+</section>

@@ -8,19 +8,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/97778ca477.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="container">
-    <header>
-      <%if user_signed_in?%>
-        <%=link_to "Edit Profile", edit_user_registration_path%>
-        <%=link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }%>
-      <%else%>
-        <%=link_to "Sign in", new_user_session_path%>
-        <%=link_to "Sign up", new_user_registration_path%>
-      <%end%>
-    </header>
+
+    <%= render partial: "layouts/header" %>
+
     <p class="notice"><%= notice %></p>
+
     <%= yield %>
+
+    <%= render partial: "layouts/footer" %>
+
+    <script>
+      const navbarMenu = document.querySelector(".js-navbar-menu");
+      const navbar = document.querySelector(".navbar");
+      navbarMenu.addEventListener("click", () => navbar.classList.toggle("navbar--open"));
+    </script>
   </body>
 </html>

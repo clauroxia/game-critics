@@ -1,29 +1,36 @@
 <div id="<%= dom_id game %>">
-  <p>
-    <strong>Name:</strong>
-    <%= game.name %>
-  </p>
+  <div class="container-m flex">
+    <div class="container-cover flex flex-center">
+      <%=image_tag game.cover, class: "game-card__image"%>
+    </div>
+    <div class="container-content">
+      <div class="game-card__content mb-0">
+        <div class="content-xs gray-300">
+          <%=link_to content_tag("p", game.name, class: "heading--xs card__link"), game_path(game)%>
+          <%= game.release_date.year %>
+        </div>
+        <p class="content-s game-card__rating">
+          <%= game.rating.round(1)%>
+        </p>
+      </div>
+      
+      <div class="container section-xs content-xs gray-400">
+        <%= truncate(game.summary, length: 60, separator: " ") %>
+      </div>
 
-  <%= image_tag game.cover %>
+      <div class="section-xs flex flex-between flex-center content-xs gray-300">
+        <p><%=game.critics_count%> Critics</p>
+        
+        <div class="game-card__actions">
+          <%=link_to image_tag("icons/pencil.svg"), 
+                    edit_game_path(game),
+                    class: "action-icon" %>
 
-  <p>
-    <strong>Summary:</strong>
-    <%= game.summary %>
-  </p>
-
-  <p>
-    <strong>Release date:</strong>
-    <%= game.release_date %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= game.category %>
-  </p>
-
-  <p>
-    <strong>Rating:</strong>
-    <%= game.rating %>
-  </p>
-
+          <%=link_to  image_tag("icons/trash.svg"), 
+                      game_path(game), data: { turbo_method: "delete" },
+                      class: "action-icon" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
