@@ -9,6 +9,7 @@ class CriticsController < ApplicationController
     @critics = @criticable.critics.scope
     @name = @criticable.class.name.downcase
     @critic = @criticable.critics.new(critics_params)
+    @critic.user_id = current_user.id
 
     if @critic.save
       redirect_to [@criticable, :critics], status: :see_other

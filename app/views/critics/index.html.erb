@@ -5,11 +5,11 @@
 <div class="critics__container">
   <%= render "form", criticable: @criticable, critic: @critic %>
 
-  <% @critics.each do |critic| %>
+  <% @critics.reverse.each do |critic| %>
     <div class="critic">
       <div class="critic__header">
         <h4 class="content-lg"><%= critic.title.capitalize %></h4>
-        <p class="content-sm gray-300">by user</p>
+        <p class="content-sm gray-300">by <%= critic.user.username %></p>
       </div>
       <p><%= critic.body %></p>
       <div class="critic__footer">
