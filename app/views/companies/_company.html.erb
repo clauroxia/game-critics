@@ -5,8 +5,8 @@
     </div>
     <div class="container-content">
       <div class="container-company company-card__content">
-        <div class="content-company mb-0">
-          <%=link_to content_tag("p", company.name), company_path(company)%>
+        <div class="mb-0">
+          <%=link_to content_tag("p", company.name), company_path(company), class: "content-company card__link"%>
         </div>
         <div class="content-xs gray-300">
           <p><%= company.start_date.year if company.start_date %> - 
@@ -26,10 +26,9 @@
                       edit_company_path(company), 
                       class: "action-icon"%>
 
-          <%=link_to image_tag("icons/trash.svg"), 
-                        company_path(company), 
-                        method: :delete, data: { turbo: "false" },
-                        class: "action-icon"%>
+          <%=link_to  image_tag("icons/trash.svg"), 
+                      company_path(company), data: { turbo_method: "delete" },
+                      class: "action-icon"%>
         </div>
       </div>
     </div>

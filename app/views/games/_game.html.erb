@@ -6,12 +6,12 @@
     <div class="container-content">
       <div class="game-card__content mb-0">
         <div class="content-xs gray-300">
-          <%=link_to content_tag("p", game.name.first(14), class: "heading--xs"), game_path(game)%>
+          <%=link_to content_tag("p", game.name, class: "heading--xs card__link"), game_path(game)%>
           <%= game.release_date.year %>
         </div>
-        <div class="container-xs content-s button--secondary">
+        <p class="content-s game-card__rating">
           <%= game.rating.round(1)%>
-        </div>
+        </p>
       </div>
       
       <div class="container section-xs content-xs gray-400">
@@ -26,9 +26,8 @@
                     edit_game_path(game),
                     class: "action-icon" %>
 
-          <%=link_to image_tag("icons/trash.svg"), 
-                      game_path(game), 
-                      method: :delete, data: { turbo: "false" },
+          <%=link_to  image_tag("icons/trash.svg"), 
+                      game_path(game), data: { turbo_method: "delete" },
                       class: "action-icon" %>
         </div>
       </div>

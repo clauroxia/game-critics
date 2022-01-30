@@ -3,7 +3,7 @@
 }
 
 .section {
-  padding: 16px;
+  margin: 1rem;
 }
 
 .section-sm {
@@ -21,7 +21,7 @@
 
 .container-cover {
   max-width: 120px;
-  height: 160px;
+  height: auto;
 }
 
 .container-company {
@@ -47,14 +47,8 @@
 
 .container-content {
   width: 208px;
-  height: 160px;
+  height: fit-content;
 }
-
-.container-ssm {
-  max-width: 328px;
-  height: 28px;
-}
-
 
 .container-sm {
   max-width: 328px;
@@ -68,7 +62,7 @@
 
 .container-m {
   max-width: 328px;
-  height: 160px;
+  height: fit-content;
 }
 
 .container-xm {

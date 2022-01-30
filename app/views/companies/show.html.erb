@@ -1,19 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render "game_header", resource: @company %>
+<%= render "company_header", resource: @company %>
 
 <%= render partial: "critics/criticable_links", locals: { criticable: @company, active: "details" } %>
 
 <section class="section bg-gray-100">
-    <div class="container-xm text-center body content-xs mb-4">
+    <p class="text-center content-xs mb-4">
       <%= @company.description %>
-    </div>
+    </p>
 
-    <div class="container-ssm heading content-xl mb-4">
-      <p>Games (<%= @company.games.count %>)</p>
-    </div>
+    <h2 class="heading heading--xs mb-4">Games (<%= @company.games.count %>)</h2>
 
-    <div id="games">
+    <div class="games">
       <% @company.games.each do |game| %>
         <div class="bg-white mb-4">
           <%= render game %>

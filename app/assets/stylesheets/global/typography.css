@@ -56,19 +56,11 @@ body {
 .content-company {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-weight: 400;
-  color: var(--gray-400);
 }
 
 .content-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.content-s {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 400;
 }
 
 .content-xs {
