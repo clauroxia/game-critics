@@ -20,6 +20,7 @@
 .game-header__rating {
   display: inline-block;
   padding: 0.5rem;
+  height: fit-content;
   color: #fff;
   background-color: var(--secondary-300);
   border-radius: 0.25rem;

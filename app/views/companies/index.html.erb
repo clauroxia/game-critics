@@ -2,13 +2,14 @@
   <div class="container-sm mb-4">
     <h1 class="heading heading--sm">Companies</h1>
   </div>
-  
-  <div class="mb-4">
-    <%= link_to "New company", new_company_path, class: "button button--primary fit-content content-xs" %>
-  </div>
+  <% if current_user.admin? %>
+    <div class="mb-4">
+      <%= link_to "New company", new_company_path, class: "button button--primary fit-content content-xs" %>
+    </div>
+  <% end %>
 
   <div id="companies">
-    <% @companies.first(5).each do |company| %>
+    <% @companies.each do |company| %>
       <div class="bg-white mb-4">
         <%= render company %>
       </div>

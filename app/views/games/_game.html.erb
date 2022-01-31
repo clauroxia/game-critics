@@ -7,11 +7,9 @@
       <div class="game-card__content mb-0">
         <div class="content-xs gray-300">
           <%=link_to content_tag("p", game.name, class: "heading--xs card__link"), game_path(game)%>
-          <%= game.release_date.year %>
+          <%= content_tag :p, game.release_date.year if game.release_date %>
         </div>
-        <p class="content-s game-card__rating">
-          <%= game.rating.round(1)%>
-        </p>
+        <%= content_tag :p, game.rating.round(1), class: "content-s game-card__rating" if game.rating %>
       </div>
       
       <div class="container section-xs content-xs gray-400">
@@ -20,16 +18,19 @@
 
       <div class="section-xs flex flex-between flex-center content-xs gray-300">
         <p><%=game.critics_count%> Critics</p>
-        
-        <div class="game-card__actions">
-          <%=link_to image_tag("icons/pencil.svg"), 
-                    edit_game_path(game),
-                    class: "action-icon" %>
-
-          <%=link_to  image_tag("icons/trash.svg"), 
-                      game_path(game), data: { turbo_method: "delete" },
+        <%if current_user.role == 1 %>
+          <div class="game-card__actions">
+            <%=link_to image_tag("icons/pencil.svg"), 
+                      edit_game_path(game),
                       class: "action-icon" %>
-        </div>
+
+            <%=link_to  image_tag("icons/trash.svg"), 
+                        game_path(game),
+                        data: { turbo_method: "delete",
+                                turbo_confirm: "Are you sure?" },
+                        class: "action-icon" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -7,8 +7,8 @@
 }
 
 .company-card__image {
-  height: 160px;
-  width: 120px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .company-card__image-show {
@@ -23,12 +23,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  
 }
 
 .company-card__actions {
   display: flex;
   justify-content: flex-end;
   gap: 12.6px;
-  }
-  
+}

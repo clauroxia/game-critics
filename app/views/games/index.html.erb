@@ -3,12 +3,13 @@
     <h1 class="heading heading--sm">Games</h1>
   </div>
 
-  <div class="mb-4">
-    <%= link_to "New game", new_game_path, class: "button button--primary fit-content content-xs" %>
-  </div>
-
+  <%if current_user.admin? %>
+    <div class="mb-4">
+      <%= link_to "New game", new_game_path, class: "button button--primary fit-content content-xs" %>
+    </div>
+  <% end %>
   <div id="games">
-    <% @games.first(5).each do |game| %>
+    <% @games.each do |game| %>
       <div class="bg-white mb-4">
         <%= render game %>
       </div>

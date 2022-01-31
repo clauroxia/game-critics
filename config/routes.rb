@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: :callbacks }
  
   resources :games do
-    resources :critics, only: %w[index create destroy], module: :games
+    resources :critics, only: %w[index create destroy update], module: :games
     resources :platforms, only: %w[create destroy]
     resources :genres, only: %w[create destroy]
   end
   resources :companies do
-    resources :critics, only: %w[index create destroy], module: :companies
+    resources :critics, only: %w[index create destroy update], module: :companies
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -3,7 +3,7 @@ class PlatformsController < ApplicationController
 
   # POST /games/:game_id/platforms
   def create
-    @platform = Platform.find(params[:platform_id])
+    @platform = authorize Platform.find(params[:platform_id])
     @game.platforms << @platform
 
     redirect_to @game, status: :see_other
@@ -11,7 +11,7 @@ class PlatformsController < ApplicationController
 
   # DELETE /games/:game_id/platforms/:id
   def destroy
-    @platform = @game.platforms.find(params[:id])
+    @platform = authorize @game.platforms.find(params[:id])
     @game.platforms.delete(@platform)
 
     redirect_to @game, status: :see_other

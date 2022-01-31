@@ -3,6 +3,7 @@
     <div class="container-cover flex flex-center">
       <%=image_tag company.cover, class: "company-card__image"%>
     </div>
+
     <div class="container-content">
       <div class="container-company company-card__content">
         <div class="mb-0">
@@ -21,15 +22,18 @@
 
       <div class="section-xs flex flex-between flex-center content-xs gray-300">
         <p><%= company.games.count%> Games</p>
-        <div class="company-card__actions">
-          <%=link_to image_tag("icons/pencil.svg"), 
-                      edit_company_path(company), 
-                      class: "action-icon"%>
 
-          <%=link_to  image_tag("icons/trash.svg"), 
-                      company_path(company), data: { turbo_method: "delete" },
-                      class: "action-icon"%>
-        </div>
+        <% if current_user.admin? %>
+          <div class="company-card__actions">
+            <%=link_to image_tag("icons/pencil.svg"), 
+                        edit_company_path(company), 
+                        class: "action-icon"%>
+
+            <%=link_to  image_tag("icons/trash.svg"), 
+                        company_path(company), data: { turbo_method: "delete" },
+                        class: "action-icon"%>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

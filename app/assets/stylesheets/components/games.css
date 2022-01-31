@@ -8,8 +8,9 @@
 }
 
 .game-card__content {
-  padding: 8px 8px;
+  padding: 0.5rem;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   align-items: center;
 }
