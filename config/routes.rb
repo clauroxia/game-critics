@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: :callbacks }
- 
+
   resources :games do
     resources :critics, only: %w[index create destroy update], module: :games
     resources :platforms, only: %w[create destroy]
